@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lullaby - a website for randomly selecting youtube videos to help you fall asleep.">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <title>Lullaby</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700&family=Caveat:wght@500;700&family=Nunito:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="particles-container"></div>
+
+    <div id="app" class="app">
+
+        <header id="header" class="header">
+            <div class="header-left">
+                <div class="logo">
+                    <img src="icon.svg" alt="Lullaby" class="logo-icon">
+                    <h1 class="logo-text">Lullaby</h1>
+                </div>
+            </div>
+            <nav class="header-right">
+                <button id="nightModeBtn" class="icon-btn" title="Dim the Lights">
+                    <i data-lucide="moon-star" class="icon"></i>
+                </button>
+                <button id="settingsBtn" class="icon-btn" title="Settings">
+                    <i data-lucide="settings" class="icon"></i>
+                </button>
+            </nav>
+        </header>
+
+        <main id="main-content" class="main-content">
+            <section id="hero-section" class="hero-section">
+                <p class="project-badge">Lullaby Beta</p>
+                <div class="hero-text">
+                    <h2 class="hero-title">Get a random<br><span class="accent-gradient">Relaxing Video</span></h2>
+                    <p class="hero-subtitle">Lullaby is a tool that lets you search for old and obscure videos on YouTube to help you fall asleep (or get lost in a rabbit hole)</p>
+                </div>
+                <p class="mini-note">made with ❤️ by Gofrez</p>
+                <div id="searchBox" class="search-wrapper glass-card">
+                    <i data-lucide="search" class="search-icon"></i>
+                    <input id="searchInput" type="text" class="search-input" placeholder="e.g. rain sounds, klaudeliza, lo-fi..." autocomplete="off">
+                    <button id="clearBtn" class="btn-clear-search hidden" title="Clear search">
+                        <i data-lucide="x" class="icon-sm"></i>
+                    </button>
+                </div>
+                <button id="btn-dream" class="btn-dream">
+                    <span class="btn-dream-glow"></span>
+                    <span class="btn-dream-content">
+                        <i data-lucide="sparkles" class="btn-dream-icon"></i>
+                        <span class="btn-dream-label">Draw</span>
+                    </span>
+                </button>
+                <p class="hero-hint">Press the <kbd>Space</kbd> or click</p>
+            </section>
+
+            <section id="video-section" class="video-section hidden">
+                <div class="video-container glass-card">
+                    <div id="video-player-wrapper" class="video-player-wrapper">
+                        <div id="yt-player" class="yt-player"></div>
+                    </div>
+                    <div id="video-info" class="video-info">
+                        <div class="video-meta">
+                            <h3 id="video-title" class="video-title">Loading...</h3>
+                            <p id="video-channel" class="video-channel"></p>
+                        </div>
+                        <div class="video-actions">
+                            <a id="btn-youtube-link" class="icon-btn" href="#" target="_blank" rel="noopener" title="Watch on YouTube">
+                                <i data-lucide="external-link" class="icon"></i>
+                            </a>
+                            <button id="btn-next-dream" class="icon-btn accent" title="Next Dream">
+                                <i data-lucide="sparkles" class="icon"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div id="floating-controls" class="floating-controls">
+                    <button id="homeBtn" class="pill-btn glass-pill" title="Back to Home">
+                        <i data-lucide="home" class="icon-sm"></i>
+                        <span>Home</span>
+                    </button>
+                    <button id="nextBtn" class="pill-btn glass-pill accent" title="Next Dream">
+                        <i data-lucide="sparkles" class="icon-sm"></i>
+                        <span>Next</span>
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <aside id="settings-panel" class="settings-panel glass-card hidden">
+            <div class="settings-header">
+                <h3>Settings</h3>
+                <button id="btn-close-settings" class="icon-btn" title="Close settings">
+                    <i data-lucide="x" class="icon"></i>
+                </button>
+            </div>
+
+            <div class="settings-body">
+                <div class="setting-group">
+                    <label for="api-key-input" class="setting-label">
+                        <i data-lucide="key-round" class="icon-sm"></i>
+                        YouTube API Key
+                    </label>
+                    <p class="setting-hint">Required for the video drawing. <a href="https://console.cloud.google.com/apis/api/youtube.googleapis.com" target="_blank" rel="noopener">Get a free key -></a></p>
+                    <div class="api-key-wrapper">
+                        <input id="api-key-input" type="password" class="setting-input" placeholder="AIza..." autocomplete="off">
+                        <button id="btn-toggle-key-vis" class="icon-btn-sm" title="Show/hide key">
+                            <i data-lucide="eye" class="icon-sm"></i>
+                        </button>
+                    </div>
+                    <button id="btn-save-key" class="pill-btn accent-btn" style="margin-top:0.5rem;">Save Key</button>
+                </div>
+
+                <hr class="setting-divider">
+                <div class="setting-group">
+                    <label class="setting-label toggle-row">
+                        <span class="setting-label-text">
+                            <i data-lucide="tv" class="icon-sm"></i>
+                            Automatic redirection to YouTube
+                        </span>
+                        <input id="toggle-auto-redirect" type="checkbox" class="toggle-input">
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <p class="setting-hint">Videos will be opened directly on YouTube instead of being embedded.</p>
+                </div>
+
+                <hr class="setting-divider">
+                <div class="setting-group">
+                    <label class="setting-label">
+                        <i data-lucide="timer" class="icon-sm"></i>
+                        Sleep Timer
+                    </label>
+                    <p class="setting-hint">Pauses playback after a specified amount of time.</p>
+                    <div class="sleep-timer-controls">
+                        <button class="timer-preset" data-minutes="0">Off</button>
+                        <button class="timer-preset" data-minutes="15">15m</button>
+                        <button class="timer-preset" data-minutes="30">30m</button>
+                        <button class="timer-preset" data-minutes="45">45m</button>
+                        <button class="timer-preset" data-minutes="60">1h</button>
+                        <button class="timer-preset" data-minutes="90">1.5h</button>
+                    </div>
+                </div>
+                <div id="sleep-timer-display" class="sleep-timer-display hidden">
+                    <div class="timer-ring-wrapper">
+                        <svg class="timer-ring" viewBox="0 0 120 120">
+                            <circle class="timer-ring-bg" cx="60" cy="60" r="52" />
+                            <circle id="timer-ring-progress" class="timer-ring-progress" cx="60" cy="60" r="52" />
+                        </svg>
+                        <span id="timer-countdown" class="timer-countdown">00:00</span>
+                    </div>
+                    <button id="btn-cancel-timer" class="pill-btn glass-pill sm">Cancel Timer</button>
+                </div>
+
+                <hr class="setting-divider">
+                <div class="setting-group">
+                    <label class="setting-label toggle-row">
+                        <span class="setting-label-text">
+                            <i data-lucide="maximize" class="icon-sm"></i>
+                            Immersive mode
+                        </span>
+                        <input id="toggle-immersive" type="checkbox" class="toggle-input" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <p class="setting-hint">Mutes the interface while watching to reduce distractions.</p>
+                </div>
+            </div>
+        </aside>
+
+        <div id="overlay" class="overlay hidden"></div>
+        <div id="timer-badge" class="timer-badge hidden">
+            <i data-lucide="moon" class="icon-sm"></i>
+            <span id="timer-badge-text">00:00</span>
+        </div>
+        <div id="toast-container" class="toast-container"></div>
+
+    </div>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
