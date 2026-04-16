@@ -10,7 +10,7 @@
 
 <br />
 <div align="center">
-  <a href="https://github.com/gofrez/lullaby">
+  <a href="https://github.com/therealgofrez/lullaby">
     <img src="icon.svg" alt="Logo" width="80" height="80">
   </a>
 
@@ -20,11 +20,11 @@
     A dreamcore-inspired tool for discovering relaxing YouTube videos
     <br />
     <br />
-    <a href="https://github.com/gofrez/lullaby">View Demo</a>
+    <a href="https://github.com/therealgofrez/lullaby">View Demo</a>
     &middot;
-    <a href="https://github.com/gofrez/lullaby/issues">Report Bug</a>
+    <a href="https://github.com/therealgofrez/lullaby/issues">Report Bug</a>
     &middot;
-    <a href="https://github.com/gofrez/lullaby/issues">Request Feature</a>
+    <a href="https://github.com/gofrez/therealgofrez/issues">Request Feature</a>
   </p>
 </div>
 
@@ -133,7 +133,7 @@ To get a local copy up and running follow these steps.
 - [ ] More search filters
 - [ ] Video history
 
-See the [open issues](https://github.com/gofrez/lullaby/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/therealgofrez/lullaby/issues) for a full list of proposed features (and known issues).
 
 
 
@@ -158,7 +158,7 @@ Distributed under the GNU General Public License v3.0. See `LICENSE` for more in
 
 ## Contact
 
-Gofrez - [@gofrez](https://github.com/gofrez)
+Gofrez - [@gofrez](https://github.com/therealgofrez)
 
 Project Link: [https://github.com/gofrez/lullaby](https://github.com/gofrez/lullaby)
 
