@@ -176,13 +176,13 @@ Project Link: [https://github.com/gofrez/lullaby](https://github.com/gofrez/lull
 
 
 
-[contributors-shield]: https://img.shields.io/github/contributors/gofrez/lullaby.svg?style=for-the-badge
-[contributors-url]: https://github.com/gofrez/lullaby/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/gofrez/lullaby.svg?style=for-the-badge
-[forks-url]: https://github.com/gofrez/lullaby/network/members
-[stars-shield]: https://img.shields.io/github/stars/gofrez/lullaby.svg?style=for-the-badge
-[stars-url]: https://github.com/gofrez/lullaby/stargazers
-[issues-shield]: https://img.shields.io/github/issues/gofrez/lullaby.svg?style=for-the-badge
-[issues-url]: https://github.com/gofrez/lullaby/issues
-[license-shield]: https://img.shields.io/github/license/gofrez/lullaby.svg?style=for-the-badge
-[license-url]: https://github.com/gofrez/lullaby/blob/master/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/therealgofrez/lullaby.svg?style=for-the-badge
+[contributors-url]: https://github.com/therealgofrez/lullaby/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/therealgofrez/lullaby.svg?style=for-the-badge
+[forks-url]: https://github.com/therealgofrez/lullaby/network/members
+[stars-shield]: https://img.shields.io/github/stars/therealgofrez/lullaby.svg?style=for-the-badge
+[stars-url]: https://github.com/therealgofrez/lullaby/stargazers
+[issues-shield]: https://img.shields.io/github/issues/therealgofrez/lullaby.svg?style=for-the-badge
+[issues-url]: https://github.com/therealgofrez/lullaby/issues
+[license-shield]: https://img.shields.io/github/license/therealgofrez/lullaby.svg?style=for-the-badge
+[license-url]: https://github.com/therealgofrez/lullaby/blob/master/LICENSE
